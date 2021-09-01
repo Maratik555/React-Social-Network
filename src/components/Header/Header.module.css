@@ -7,3 +7,13 @@
 .header img{
     height: 11vmin;
 }
+
+.loginBlock{
+    float:right;
+
+}
+
+.loginBlock a{
+    text-decoration: none;
+    color: white;
+}
