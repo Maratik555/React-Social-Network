@@ -1,0 +1,32 @@
+.nav{
+grid-area: n;
+background-color: #212121;
+    padding: 20px;
+}
+
+/*.it {*/
+/*    font-size:50px;*/
+/*    */
+/*    text-decoration: none;*/
+/*    padding-top: 100px;*/
+/*    padding-left: 15px; }*/
+
+.item a{
+    color: honeydew;
+    font-size: 30px;
+    padding: 20px;
+    text-decoration: none;
+    transition-duration: 1s;
+    }
+
+
+.item:hover {
+
+    background-color: #2B2B2B;
+    color:white;
+    box-shadow: 2px 2px 3px black;
+}
+
+.nav .item{
+    padding:10px;
+}

@@ -6,8 +6,6 @@ import DialogsContainer from "./components/Dialogs/Message/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 
-// import Friends from "./components/Friends/friends";
-
 const App = () => {
     return (
       <div className="app-wrapper">
