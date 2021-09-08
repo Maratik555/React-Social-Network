@@ -1,11 +1,18 @@
 .header {
   grid-area: h;
-  background-color:#191919;
+  background-color:#222222;
+}
 
+.header h1{
+    color:white;
+    font-size: 20px;
+    float:left;
+    padding-top:4px;
 }
 
 .header img{
-    height: 11vmin;
+    height: 10vmin;
+    float:left;
 }
 
 .loginBlock{
