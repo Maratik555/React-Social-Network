@@ -31,10 +31,11 @@ const Users = (props) => {
                               props.unfollow(u.id)
 
                             }}>Unfollow</button>
+
                             : <button disabled={props.following.some(id=>id===u.id)} onClick={() => {
                               props.follow(u.id)
-                            }}>Follow</button>}
 
+                            }}>Follow</button>}
                       </div>
                   </span>
                 <div className={styles.nameSt}>{u.name}<br />{u.status}</div>
