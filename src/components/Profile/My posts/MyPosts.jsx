@@ -4,7 +4,7 @@ import React from "react";
 
 const MyPosts = (props) => {
     let postsEl;
-    postsEl = props.posts.map(p => <Post message={p.message}  like={p.like}/>);
+    postsEl = props.posts.map((p) => <Post message={p.message} key={p}  like={p.like}/>);
 
     let newPostEl = React.createRef()
 
@@ -27,7 +27,7 @@ const MyPosts = (props) => {
               <div>
                   <button onClick={onAddPost}>Add post</button>
               </div>
-              <button disabled={true}>Remove</button>
+              <button>Remove</button>
           </div>
           <div className={s.posts}>
               {postsEl}
