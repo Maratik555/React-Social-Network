@@ -3,7 +3,7 @@ import Post from './Post/Post';
 import React from "react";
 import {Field, reduxForm} from "redux-form";
 import {maxCreatorLength, required} from "../../../utils/validators/validators";
-import {Textarea} from "../../common/FormsControl/FormControls";
+import {Element} from '../../common/FormsControl/FormControls'
 
 const MyPosts = (props) => {
     let postsEl;
@@ -25,6 +25,7 @@ const MyPosts = (props) => {
 }
 
 const maxLength10 =  maxCreatorLength(10)
+const Textarea = Element("textarea")
 
 let AddNewForm = (props) => {
   return (
