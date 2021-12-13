@@ -9,12 +9,16 @@
     font-size:25px;
 }
 
+textarea{
+    margin-top: 15px;
+}
+
 button{
+    margin-top:20px;
     margin-left: 35px;
     border: 2px solid black;
     font-size: 25px;
     border-radius: 6px;
-    width:15%;
     cursor: pointer;
     animation: glowing 1300ms infinite;
 }
@@ -52,26 +56,27 @@ span{
     color: white;
 }
 
-.preloader {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
 }
-@keyframes spin {
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.5s linear infinite;
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
     100% {
         transform: rotate(360deg);
     }
-}
-
-.spinner {
-    width: 40px;
-    height: 40px;
-    border: 7px solid red;
-    border-left-color: white;
-    border-right-color:transparent;
-    border-bottom-color: rgb(209, 209, 209);
-    border-radius: 100%;
-    animation: spin 1500ms infinite;
 }

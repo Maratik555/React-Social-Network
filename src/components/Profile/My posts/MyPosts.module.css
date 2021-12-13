@@ -1,7 +1,14 @@
 .pBlock{
     padding:10px;
+    color:lightblue;
 }
 
 .posts{
     margin-top: 10px;
+    color: aliceblue;
+}
+
+.btn{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

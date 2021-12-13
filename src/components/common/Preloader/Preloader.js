@@ -1,14 +1,9 @@
 import React from 'react';
-import styles from "../../Users/users.module.css";
+import "../../Users/users.module.css";
 
 const Preloader = () => {
-    return (
-        <div>
-            <div className={styles.preloader}>
-                <div className={styles.spinner}/>
-            </div>
-        </div>
-    );
+    return <div className="lds-dual-ring"></div>
+
 };
 
 export default Preloader;

@@ -5,19 +5,21 @@ display: grid;
 }
 .dialogItems {
 
-
 }
 .dialogItems .active {
-    color: gold;
     padding:5px;
 
 }
 
 .messages {
-
+color:white;
 
 }
 
 .dialogs .message {
 padding:5px;
+}
+
+.active {
+    color:white;
 }
