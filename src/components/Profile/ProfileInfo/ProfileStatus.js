@@ -1,7 +1,5 @@
 import React from 'react'
-//import s from'./ProfileInfo.module.css'
-//import Preloader from "../../common/Preloader/Preloader";
-//import idPhoto from "../../../assets/images/1.jpg"
+
 
 class ProfileStatus extends React.Component {
  state = {
@@ -11,8 +9,8 @@ class ProfileStatus extends React.Component {
 
  actMode = () => {
    this.setState({ editMode: true})
-
  }
+
  deactivateMode = () => {
    this.setState({ editMode: false})
    this.props.updateStatus(this.state.status)

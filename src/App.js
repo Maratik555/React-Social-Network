@@ -6,16 +6,19 @@ import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
-import {Component} from "react";
+import {Component, Suspense} from "react";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 
+
 class App extends Component {
+
   componentDidMount() {
     this.props.initializeApp()
   }
+
   render() {
     if (!this.props.initialize) {
       return <Preloader/>
@@ -26,6 +29,9 @@ class App extends Component {
         <HeaderContainer/>
         <Navbar/>
         <div className="app-wrapper-content">
+          <Suspense fallback={<Preloader/>}>
+            <Route path="/dialogs" render={() => <DialogsContainer/>}/>
+
           <Route path="/dialogs"
                  render={() => <DialogsContainer/>}/>
 
@@ -37,6 +43,7 @@ class App extends Component {
 
           <Route path="/login"
                  render={() => <Login/>}/>
+          </Suspense>
         </div>
       </div>
     )

@@ -11,8 +11,8 @@ const TOGGLE_IS_FOLLOWING = 'TOGGLE_IS_FOLLOWING'
 
 let initialState = {
     users: [],
-    pageSize: 5,
-    totalUsersCount: 0,
+    pageSize: 10,
+    totalItemCount: 0,
     currentPage: 1,
     isFetching: true,
     following: [],
@@ -47,7 +47,7 @@ const usersReducer = (state = initialState, action) => {
             return {...state, currentPage: action.currentPage}
             }
             case SET_TOTAL_USERS_COUNT : {
-            return {...state, totalUsersCount: action.count}
+            return {...state, totalItemCount: action.count}
             }
             case TOGGLE_IS_FETCHING : {
             return {...state, isFetching: action.isFetching}
@@ -66,45 +66,42 @@ export const followSuccess = (userId) => ({type: FOLLOW, userId})
 export const unfollowSuccess = (userId) => ({type: UNFOLLOW, userId})
 export const setUsers = (users) => ({type: SET_USERS, users})
 export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage})
-export const setTotalUsersCount = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, count:totalUsersCount})
+export const setTotalUsersCount = (totalItemCount) => ({type: SET_TOTAL_USERS_COUNT, count:totalItemCount})
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 export const toggleFollowing = (isFetching,userId) => ({type: TOGGLE_IS_FOLLOWING, isFetching,userId})
 
-export const getUsers=(page,pageSize)=>{
-  return (dispatch)=> {
+export const getUsers = (page,pageSize) => {
+  return async (dispatch) => {
 
     dispatch(toggleIsFetching(true))
 
-    usersAPI.getUsers(page,pageSize).then(data => {
+   let data = await usersAPI.getUsers(page,pageSize)
       dispatch(setCurrentPage(page))
       dispatch(toggleIsFetching(false))
       dispatch(setUsers(data.items))
       dispatch(setTotalUsersCount(data.totalCount))
-    })
   }
 }
 
-export const follow =(userId)=>{
-   return(dispatch)=>{(toggleFollowing(true,userId))
-  usersAPI.follow(userId)
-  .then(response => {
+
+export const follow = (userId) => {
+   return async (dispatch) => {(toggleFollowing(true,userId))
+ let response = await usersAPI.follow(userId)
     if (response.data.resultCode === 0) {
       dispatch(followSuccess(userId))
     }
     dispatch(toggleFollowing(false,userId))
-  })
    }
 }
 
-export const unfollow =(userId)=>{
-  return(dispatch)=>{(toggleFollowing(true,userId))
-    usersAPI.unfollow(userId)
-    .then(response => {
+export const unfollow = (userId) => {
+  return async (dispatch) => {(toggleFollowing(true,userId))
+   let response = await usersAPI.unfollow(userId)
+
       if (response.data.resultCode === 0) {
         dispatch(unfollowSuccess(userId))
       }
       dispatch(toggleFollowing(false,userId))
-    })
   }
 }
 

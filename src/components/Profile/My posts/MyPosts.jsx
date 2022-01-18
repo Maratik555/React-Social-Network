@@ -6,8 +6,7 @@ import {maxCreatorLength, required} from "../../../utils/validators/validators";
 import {Element} from '../../common/FormsControl/FormControls'
 
 const MyPosts = (props) => {
-    let postsEl;
-    postsEl = props.posts.map((p) => <Post message={p.message} key={p}  like={p.like}/>);
+    let postsEl = [...props.posts].reverse().map((p) => <Post message={p.message} key={p.id}  like={p.like}/>);
 
     let onAddPost = (values) => {
         props.addPost(values.newPostText)

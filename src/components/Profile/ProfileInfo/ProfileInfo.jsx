@@ -1,7 +1,6 @@
-import s from'./ProfileInfo.module.css'
+import s from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
-//import idPhoto from "../../../assets/images/1.jpg"
-import ProfileStatus from "./ProfileStatus";
+import ProfileHooks from "./ProfileHooks";
 
 const ProfileInfo = (props) => {
   if(!props.profile){return <Preloader/>}
@@ -13,7 +12,7 @@ const ProfileInfo = (props) => {
       </div>
       <div className={s.desBloc}>
           <img src={props.profile.photos.large} alt="profile"/>
-      <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+      <ProfileHooks status={props.status} updateStatus={props.updateStatus}/>
       </div>
     </div>
   );
