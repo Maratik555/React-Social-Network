@@ -1,12 +1,21 @@
 .userPhoto{
     width:150px;
     height:150px;
-    margin-left: 20px;
+    margin-left:20px;
+}
+
+.pageNumber{
+    margin: 4px;
+    border: 2px solid white;
+}
+
+.btn{
+    margin-left:50px;
 }
 
 .selectedPage{
     font-weight: bold;
-    font-size:25px;
+    font-size:35px;
     border-color: black;
 }
 
@@ -14,19 +23,20 @@ textarea{
     margin-top: 15px;
 }
 
+
 button{
     margin-top:20px;
     margin-left: 35px;
     border: 2px solid black;
-    font-size: 25px;
+    font-size: 20px;
     border-radius: 6px;
     cursor: pointer;
-    animation: glowing 1300ms infinite;
+    animation: glowing 1000ms infinite;
 }
 @keyframes glowing {
-    0% { background-color: red; box-shadow: 0 0 5px white; }
-    50% { background-color: red; box-shadow: 0 0 15px white; }
-    100% { background-color: red; box-shadow: 0 0 5px white; }
+    0% { background-color: red; }
+    50% { background-color: red; box-shadow: 1px 1px 1px black}
+    100% { background-color: red; }
 }
 
 
@@ -36,12 +46,13 @@ button:hover {
 }
 button:active {
     background-color: black;
-    box-shadow: 3px 3px 3px 3px grey;
+    box-shadow: 2px 2px 2px 2px white;
 }
 
 .nameSt{
     margin-left:15px;
     color: white;
+    padding-top: 15px;
 }
 
 .loc{
@@ -51,8 +62,6 @@ button:active {
 }
 
 span{
-    font-size:20px;
-    padding: 5px;
     cursor: pointer;
     color: white;
 }

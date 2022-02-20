@@ -4,6 +4,7 @@ const SET_INITIALIZE = 'SET_INITIALIZE'
 
 let initialState = {
   initialize: false,
+
 }
 
 const appReducer = (state = initialState, action) => {
@@ -22,9 +23,9 @@ const appReducer = (state = initialState, action) => {
 export const initialized = () => ({type:SET_INITIALIZE})
 
 export const initializeApp = () => (dispatch) => {
- let promise =  dispatch(getAuthUserData())
+ const promise = dispatch(getAuthUserData())
 
-  promise.then(()=>{
+  promise.then(() => {
     dispatch(initialized())
   })
 }

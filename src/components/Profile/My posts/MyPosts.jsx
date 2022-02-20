@@ -1,12 +1,12 @@
-import s from './MyPosts.module.css';
-import Post from './Post/Post';
-import React from "react";
-import {Field, reduxForm} from "redux-form";
-import {maxCreatorLength, required} from "../../../utils/validators/validators";
-import {Element} from '../../common/FormsControl/FormControls'
+import s from './MyPosts.module.css'
+import Post from './Post/Post'
+import React from "react"
+import {Field, reduxForm} from "redux-form"
+import {maxCreatorLength, required} from "../../../utils/validators/validators"
+import {Element} from '../../common/FormsControls/FormControls'
 
 const MyPosts = (props) => {
-    let postsEl = [...props.posts].reverse().map((p) => <Post message={p.message} key={p.id}  like={p.like}/>);
+    let postsEl = [...props.posts].reverse().map(p => <Post message={p.message} key={p.id} like={p.like}/>)
 
     let onAddPost = (values) => {
         props.addPost(values.newPostText)
@@ -33,8 +33,10 @@ let AddNewForm = (props) => {
         <Field placeholder="New Post" name='newPostText' component={Textarea}
                validate={[required,maxLength10]} />
       </div>
-      <div className={s.btn}>
+        <div className={s.btn}>
         <button>Add</button>
+        </div>
+      <div className={s.btn}>
         <button>Remove</button>
       </div>
     </form>
@@ -43,4 +45,4 @@ let AddNewForm = (props) => {
 
 const AddNewFormRedux = reduxForm({form:'ProfileAddNewForm'})(AddNewForm)
 
-export default MyPosts;
+export default MyPosts

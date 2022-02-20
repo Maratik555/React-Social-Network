@@ -1,16 +1,17 @@
-import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import {Route, withRouter} from "react-router-dom";
-import DialogsContainer from "./components/Dialogs/Message/DialogsContainer";
-import UsersContainer from "./components/Users/UsersContainer";
-import ProfileContainer from "./components/Profile/ProfileContainer";
-import HeaderContainer from "./components/Header/HeaderContainer";
-import Login from "./components/Login/Login";
-import {Component, Suspense} from "react";
-import {connect} from "react-redux";
-import {compose} from "redux";
-import {initializeApp} from "./redux/app-reducer";
-import Preloader from "./components/common/Preloader/Preloader";
+import './App.css'
+import Navbar from './components/Navbar/Navbar'
+import {Route, withRouter} from "react-router-dom"
+import DialogsContainer from "./components/Dialogs/Message/DialogsContainer"
+import UsersContainer from "./components/Users/UsersContainer"
+import ProfileContainer from "./components/Profile/ProfileContainer"
+import HeaderContainer from "./components/Header/HeaderContainer"
+import Login from "./components/Login/Login"
+import {Component, Suspense} from "react"
+import {connect} from "react-redux"
+import {compose} from "redux"
+import {initializeApp} from "./redux/app-reducer"
+import Preloader from "./components/common/Preloader/Preloader"
+import FrContainer from "./components/Friends/FrContainer"
 
 
 class App extends Component {
@@ -30,7 +31,8 @@ class App extends Component {
         <Navbar/>
         <div className="app-wrapper-content">
           <Suspense fallback={<Preloader/>}>
-            <Route path="/dialogs" render={() => <DialogsContainer/>}/>
+          <Route path="/friends"
+                   render={() => <FrContainer/>}/>
 
           <Route path="/dialogs"
                  render={() => <DialogsContainer/>}/>
@@ -41,7 +43,7 @@ class App extends Component {
           <Route path="/users"
                  render={() => <UsersContainer/>}/>
 
-          <Route path="/login"
+          <Route exact path="/login"
                  render={() => <Login/>}/>
           </Suspense>
         </div>

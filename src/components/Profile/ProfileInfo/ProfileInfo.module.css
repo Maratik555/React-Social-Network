@@ -1,6 +1,32 @@
 .proImg img {
 width: 100%;
 }
-.desBloc{
+
+.desBloc {
     padding:10px;
+}
+
+.btn {
+    margin: 20px;
+}
+
+.contact {
+    padding-left: 15px;
+}
+
+.status {
+    padding-bottom:15px;
+    color : #d24949;
+}
+.mainPhoto {
+    max-width:200px;
+    border-radius: 100%;
+    margin-bottom: 30px;
+}
+
+.Ph {
+    border: 1px solid white;
+    margin-left: -200px;
+    margin-bottom: 30px;
+    background-color: red;
 }

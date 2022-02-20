@@ -2,14 +2,13 @@
 display: grid;
     grid-template-columns: 2fr 10fr;
     padding:10px;
+    font-size: 20px;
 }
-.dialogItems {
 
-}
 .dialogItems .active {
     padding:5px;
-
 }
+
 
 .messages {
 color:white;
@@ -17,7 +16,7 @@ color:white;
 }
 
 .dialogs .message {
-padding:5px;
+padding:8px;
 }
 
 .active {

@@ -5,12 +5,12 @@ import Users from "./Users";
 import Preloader from "../common/Preloader/Preloader";
 import {compose} from "redux";
 import {
-    getCurrentPage,
-    getFollowing,
-    getIsFetching,
-    getPageSize,
-    getTotalUsersCount,
-    mstpGetUsers
+  getCurrentPage,
+  getFollowing,
+  getIsFetching,
+  getPageSize,
+  getTotalUsersCount,
+  mstpGetUsers
 } from "../../redux/users-selectors";
 
 
@@ -34,7 +34,7 @@ class UsersContainer extends React.Component {
                       follow={this.props.follow}
                       unfollow={this.props.unfollow}
                       following={this.props.following}
-                      //portionSize={this.props.portionSize}
+
         />
         </>
     }

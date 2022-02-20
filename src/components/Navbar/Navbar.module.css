@@ -4,15 +4,9 @@ background-color: #191919;
     padding: 20px;
 }
 
-/*.it {*/
-/*    font-size:50px;*/
-/*    */
-/*    text-decoration: none;*/
-/*    padding-top: 100px;*/
-/*    padding-left: 15px; }*/
 
 .item a{
-    color: honeydew;
+    color: white;
     font-size: 30px;
     padding: 20px;
     text-decoration: none;
@@ -21,7 +15,6 @@ background-color: #191919;
 
 
 .item:hover {
-
     background-color: #2B2B2B;
     color:white;
     box-shadow: 2px 2px 3px black;

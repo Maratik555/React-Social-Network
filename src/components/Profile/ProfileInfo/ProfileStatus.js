@@ -43,7 +43,7 @@ class ProfileStatus extends React.Component {
           <input onChange={this.onStatusChange}
                  onBlur={this.deactivateMode}
                  autoFocus={true} value={this.state.status}/>
-          <div style={{color: 'white'}}>{this.state.status.length}/300</div>
+        <div   style={{color: 'white'}}>{this.state.status.length}/300</div>
         </div>
       }
     </div>
