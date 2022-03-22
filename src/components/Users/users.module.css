@@ -23,10 +23,7 @@ textarea{
     margin-top: 15px;
 }
 
-
 button{
-    margin-top:20px;
-    margin-left: 35px;
     border: 2px solid black;
     font-size: 20px;
     border-radius: 6px;
@@ -34,11 +31,10 @@ button{
     animation: glowing 1000ms infinite;
 }
 @keyframes glowing {
-    0% { background-color: red; }
-    50% { background-color: red; box-shadow: 1px 1px 1px black}
-    100% { background-color: red; }
+    0% { background-color: red; box-shadow: 1px 1px 1px black;}
+    50% { background-color: red; box-shadow: 1px 1px 1px black;}
+    100% { background-color: red; box-shadow: 1px 1px 1px black;}
 }
-
 
 button:hover {
     background-color: black;
@@ -46,19 +42,13 @@ button:hover {
 }
 button:active {
     background-color: black;
-    box-shadow: 2px 2px 2px 2px white;
+    box-shadow: 2px 2px 2px 2px black;
 }
 
 .nameSt{
-    margin-left:15px;
+    margin-left:55px;
     color: white;
     padding-top: 15px;
-}
-
-.loc{
-    padding-top: 15px;
-    margin-left: 15px;
-    color: white;
 }
 
 span{
@@ -66,25 +56,3 @@ span{
     color: white;
 }
 
-.lds-dual-ring {
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-}
-.lds-dual-ring:after {
-    content: " ";
-    display: block;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
-    border-radius: 50%;
-    animation: lds-dual-ring 1.5s linear infinite;
-}
-@keyframes lds-dual-ring {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}

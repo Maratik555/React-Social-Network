@@ -10,7 +10,7 @@ let initialState = {
         ]
 }
 
-const friendsReducer = (state=initialState,action) => {
+const friendsReducer = (state=initialState,action:any) => {
         switch (action.type) {
           case ADD:
             let body = action.add

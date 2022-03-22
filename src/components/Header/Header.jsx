@@ -1,6 +1,6 @@
 import s from './Header.module.css'
 import logo from "../../assets/images/logo.png"
-import {NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom"
 
 const Header = (props) => {
     return (
@@ -9,8 +9,8 @@ const Header = (props) => {
         <h1><b>REACT NETWORK</b></h1>
           <div className={s.loginBlock}>
               {props.isAuth
-                ? <div>{props.login} <button style={{marginRight:20}}
-                                             onClick={props.logout}>Log out</button></div>
+                ? <div>{props.login} <button style={{width:'50%'}}
+                                             onClick={props.logout}>Logout</button></div>
                 : <NavLink style={{marginRight:20,backgroundColor:"secondary"}} to={'/Login'}>Login</NavLink>}
           </div>
       </header>

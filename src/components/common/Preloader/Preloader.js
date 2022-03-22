@@ -1,9 +1,11 @@
-import React from 'react';
-import "../../Users/users.module.css";
+import React from 'react'
+import preloader from '../../../assets/images/preloader.gif'
 
 const Preloader = () => {
-    return <div className="lds-dual-ring"></div>
+  return <div style={{backgroundColor:'white'}}>
+    <img src={preloader} alt="Preloader"/>
+  </div>
 
-};
+}
 
-export default Preloader;
+export default Preloader

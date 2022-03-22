@@ -6,6 +6,10 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.20",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
     "axios": "^0.21.1",
     "classnames": "^2.3.1",
     "react": "^17.0.2",
@@ -17,6 +21,8 @@
     "redux-form": "^8.3.8",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.1.5",
+    "styled-components": "^5.3.3",
+    "typescript": "^4.5.5",
     "web-vitals": "^1.1.2"
   },
   "resolutions": {
@@ -47,6 +53,8 @@
     ]
   },
   "devDependencies": {
+    "@types/react-router-dom": "^5.3.3",
+    "@types/redux-form": "^8.3.3",
     "babel-eslint": "^10.1.0",
     "eslint-config-react-app": "^7.0.0",
     "react-error-overlay": "6.0.9",

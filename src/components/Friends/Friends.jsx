@@ -8,9 +8,9 @@ function Friends(props) {
   const dispatch = useDispatch()
   let path = '/friend/'
   let state = props.friendsR
-  let friend = state.friends.map(d => {
-   return <div className={s.dialogs + ' ' + s.active} key={d.id}>
-     <NavLink to={path}>{d.name}</NavLink>online</div>
+  let friend = state.friends.map(el => {
+   return <div className={s.dialogs + ' ' + s.active} key={el.id}>
+     <NavLink to={path}>{el.name}</NavLink>Online</div>
   })
 
   const toFriend = () => {

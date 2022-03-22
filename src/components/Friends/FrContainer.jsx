@@ -15,4 +15,4 @@ let mapStateToProps = (state) => {
 //   }
 // }
 
-export default connect(mapStateToProps,null)(Friends)
+export default connect(mapStateToProps)(Friends)

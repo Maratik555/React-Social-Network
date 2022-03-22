@@ -1,4 +1,3 @@
-import React from 'react'
 import s from './FormsControl.module.css'
 
 export const Element = Element => ({ input, meta, ...props }) => {
