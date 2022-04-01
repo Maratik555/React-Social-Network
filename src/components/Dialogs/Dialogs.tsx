@@ -1,26 +1,33 @@
+// @ts-ignore
 import s from './Dialogs.module.css'
-import DialogItem from "./Dialogitem/Dialogitem";
-import Message from "./Message/Message";
-import {Redirect} from "react-router-dom";
-import {Field, reduxForm} from "redux-form";
-import React from "react";
-import {maxCreatorLength, required} from "../../utils/validators/validators";
+import DialogItem from './Dialogitem/Dialogitem'
+import Message from './Message/Message'
+import {Field, reduxForm} from 'redux-form'
+import React, {FC} from 'react'
+import {maxCreatorLength, required} from '../../utils/validators/validators'
 import {Element} from '../common/FormsControls/FormControls'
+import {InitialStateType} from '../../redux/dialogs-reducer'
+import {Button} from 'antd'
+
 
 const Textarea = Element("textarea");
 const maxLength50 = maxCreatorLength(50)
 
+type OwnPropsType = {
+   dialogsPage: InitialStateType
+   sendMessage: (messageText: string) => void
 
-const Dialogs = (props) => {
+}
+
+const Dialogs: FC<OwnPropsType> = (props) => {
     let state = props.dialogsPage
+    // @ts-ignore
     let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} key={d.id} id={d.id}/>)
     let messagesEl = state.messages.map(m => <Message message={m.message} key={m.id}/>)
 
-    let addNewMessage = (values) => {
+    let addNewMessage = (values: {newMessageBody: string | any}) => {
         props.sendMessage(values.newMessageBody)
     }
-
-    if(!props.isAuth) return <Redirect to={'/login'}/>
 
     return (
       <div className={s.dialogs}>
@@ -30,25 +37,25 @@ const Dialogs = (props) => {
         <div className={s.messages}>
               {messagesEl}
         </div>
-        <AddMessageReduxForm onSubmit={addNewMessage} />
+        <AddMessageReduxForm onSubmit={addNewMessage}/>
       </div>
     )
 }
 
-function AddMessage(props) {
+function AddMessage(props:any) {
     return (
       <form onSubmit={props.handleSubmit}>
         <div>
           <Field placeholder={"Enter your message"} name={'newMessageBody'} component={Textarea}
                  validate={[required, maxLength50]}/>
-          <div className={s.btn}><button
-          > Send </button>
+          <div className={s.btn}><Button
+          > Send </Button>
           </div>
         </div>
       </form>
     )
 }
 
-const AddMessageReduxForm = reduxForm ({form: 'dialogs'})(AddMessage)
+const AddMessageReduxForm: any = reduxForm ({form: 'dialogs'})(AddMessage)
 
 export default Dialogs

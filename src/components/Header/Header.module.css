@@ -1,28 +1,27 @@
-.header {
-  grid-area: h;
-  background-color:#222222;
-}
+/*.header {*/
+/*  grid-area: h;*/
+/*  background-color:#222222;*/
+/*}*/
 
-.header h1{
-    color:white;
-    font-size: 20px;
-    float:left;
-    padding-top:4px;
-}
+/*.header h1{*/
+/*    color:white;*/
+/*    font-size: 20px;*/
+/*    float:left;*/
+/*    padding-top:4px;*/
+/*}*/
 
-.header img{
-    height: 10vmin;
-    float:left;
-}
+/*.header img{*/
+/*    height: 10vmin;*/
+/*    float:left;*/
+/*}*/
 
-.loginBlock{
-    float:right;
-    font-size: 20px;
-    color: white;
-}
+/*.loginBlock{*/
+/*    float:right;*/
+/*    font-size: 20px;*/
+/*}*/
 
-.loginBlock a{
-    padding-right: 20px;
-    text-decoration: none;
-    text-align: center;
-}
+/*.loginBlock a{*/
+/*    padding-right: 20px;*/
+/*    text-decoration: none;*/
+/*    text-align: center;*/
+/*}*/

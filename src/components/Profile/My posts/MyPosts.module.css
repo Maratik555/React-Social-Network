@@ -1,16 +1,17 @@
 .pBlock{
-    padding:10px;
-    color:lightblue;
+    padding-left:15px;
 }
 
 .posts{
-    margin-top: 10px;
-    color: aliceblue;
+    margin-top: 15px;
+    margin-left: 15px;
 }
 
-/*.btn{*/
-/*    margin-top: 20px;*/
-/*    margin-bottom: 20px;*/
-/*    padding-bottom: 15px;*/
-/*    cursor: pointer;*/
-/*}*/
+
+.item img{
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+

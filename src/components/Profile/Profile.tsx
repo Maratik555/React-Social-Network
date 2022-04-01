@@ -1,7 +1,9 @@
-import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import MyPostsContainer from "./My posts/MyPostsContainer";
+import ProfileInfo, {PropsType} from './ProfileInfo/ProfileInfo'
+import {FC} from 'react'
+import MyPosts from './My posts/MyPosts'
 
-const Profile = (props) => {
+const Profile: FC<PropsType> = (props) => {
+
     return (
     <div>
         <ProfileInfo savePhoto={props.savePhoto}
@@ -10,11 +12,11 @@ const Profile = (props) => {
                      status={props.status}
                      updateStatus={props.updateStatus}
                      saveProfile={props.saveProfile}
-
         />
-        <MyPostsContainer />
+        {/*@ts-ignore*/}
+        <MyPosts handleSubmit={undefined} />
     </div>
-  );
-};
+  )
+}
           
-export default Profile;
+export default Profile

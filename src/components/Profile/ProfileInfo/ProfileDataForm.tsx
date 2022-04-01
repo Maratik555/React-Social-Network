@@ -1,12 +1,13 @@
-import React from "react"
-import {Field, reduxForm} from "redux-form"
-import {Element} from "../../common/FormsControls/FormControls"
+import React, {FC} from 'react'
+import {Field, reduxForm} from 'redux-form'
+import {Element} from '../../common/FormsControls/FormControls'
+// @ts-ignore
 import s from './ProfileInfo.module.css'
 
 const Input = Element("input")
 const Textarea = Element("textarea")
 
-const ProfileDataForm = (props) => {
+const ProfileDataForm:FC<any> = (props) => {
   return <form onSubmit={props.handleSubmit}>
     <div><button>Save</button></div>
     <div>

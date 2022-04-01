@@ -10,15 +10,10 @@ display: grid;
 }
 
 
-.messages {
-color:white;
-
-}
-
 .dialogs .message {
 padding:8px;
 }
 
 .active {
-    color:white;
+    color: red;
 }

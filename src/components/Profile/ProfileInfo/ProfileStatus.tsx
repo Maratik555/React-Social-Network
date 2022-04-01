@@ -1,4 +1,4 @@
-import React, {ChangeEvent} from 'react'
+import React, {ChangeEvent, FC, useState} from 'react'
 
 type PropsType = {
     status: string
@@ -6,59 +6,47 @@ type PropsType = {
 }
 
 type StateType = {
-    editMode:boolean
-    status:string
-
+    editMode: boolean
+    status: string
 }
 
-class ProfileStatus extends React.Component<PropsType,StateType> {
- state = {
-   editMode: false,
-   status: this.props.status
+const ProfileStatus: FC<PropsType & StateType> = (props) => {
+    const [editMode,setEditMode] = useState(false)
+    const [status,setStatus] = useState(props.status)
+
+ const actMode = () => {
+   setEditMode(true)
  }
 
- actMode = () => {
-   this.setState({ editMode: true})
+ const deactivateMode = () => {
+   setEditMode(false)
+   props.updateStatus(status)
  }
 
- deactivateMode = () => {
-   this.setState({ editMode: false})
-   this.props.updateStatus(this.state.status)
- }
-
- onStatusChange = (e:ChangeEvent<HTMLInputElement>) => {
+ const onStatusChange = (e:ChangeEvent<HTMLInputElement>) => {
    if(e.target.value.length <= 300)
-   this.setState({
-     status: e.target.value
-   })
+   setStatus(e.target.value)
  }
 
- componentDidUpdate(prevProps:PropsType, prevState:StateType) {
-   if (prevProps.status !== this.props.status) {
-     this.setState({status: this.props.status})
-   }
- }
-
-  render() {
-  const props = this.props;
   return (
     <div>
-        {!this.state.editMode &&
+        {!editMode &&
         <div>
-          <span onClick={this.actMode}>{props.status || 'Нет статуса'}</span>
+          <span onClick={actMode}>{props.status || 'Нет статуса'}</span>
         </div>
       }
-        {this.state.editMode &&
+        {editMode &&
         <div>
-          <input onChange={this.onStatusChange}
-                 onBlur={this.deactivateMode}
-                 autoFocus={true} value={this.state.status}/>
-        <div   style={{color: 'white'}}>{this.state.status.length}/300</div>
+          <input onChange={onStatusChange}
+                 onBlur={deactivateMode}
+                 autoFocus={true} value={status}/>
+        <div style={{color: 'white'}}>
+            {status.length}/300
+        </div>
         </div>
       }
     </div>
   )
-}
 }
 
 export default ProfileStatus

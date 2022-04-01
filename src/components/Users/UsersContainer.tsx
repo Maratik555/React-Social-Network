@@ -1,77 +1,23 @@
-import React from "react"
-import {connect} from "react-redux"
-import {follow, getUsers, unfollow} from "../../redux/users-reducer";
-import Users from "./Users"
-import Preloader from "../common/Preloader/Preloader"
-import {compose} from "redux"
-import {
-  getCurrentPage,
-  getFollowing,
-  getIsFetching,
-  getPageSize,
-  getTotalUsersCount,
-  mstpGetUsers
-} from "../../redux/users-selectors"
-import {AppStateType} from "../../redux/redux-store"
+import React, {FC} from 'react'
+import {useSelector} from 'react-redux'
+import {Users} from './Users'
+import Preloader from '../common/Preloader/Preloader'
+import {getIsFetching} from '../../redux/users-selectors'
 
 interface PropsType {
-  pageTitle:string
-  currentPage: number
-  pageSize: number
-  isFetching: boolean
-  totalItemCount:number
-  users: Array<number>
-  following:Array<number>
-  follow: () => void
-  unfollow: () => void
-
-  getUsers: (currentPage:number,pageSize:number) => void
-
+    pageTitle: string
 }
 
-class UsersContainer extends React.Component<PropsType> {
-  componentDidMount() {
-    this.props.getUsers(this.props.currentPage, this.props.pageSize)
-  }
+const UsersPage:FC<PropsType> = ({pageTitle}) => {
 
-  onPageChanged(pageNumber:number) {
-    this.props.getUsers(pageNumber, this.props.pageSize);
-  }
+    const isFetching = useSelector(getIsFetching)
 
-  render() {
+
     return <>
-      <h2>{this.props.pageTitle}</h2>
-      { this.props.isFetching ? <Preloader/> :
-      <Users totalItemCount={this.props.totalItemCount}
-             pageSize={this.props.pageSize}
-             currentPage={this.props.currentPage}
-             onPageChanged={this.onPageChanged.bind(this)}
-             users={this.props.users}
-             follow={this.props.follow}
-             unfollow={this.props.unfollow}
-             following={this.props.following}
-      />
-      }
-    </>
-  }
+        <h2>{pageTitle}</h2>
+        {isFetching ? <Preloader/> : null }
+            <Users/>
+            </>
 }
 
-let mapStateToProps = (state:AppStateType) => {
-  return {
-    users: mstpGetUsers(state),
-    pageSize: getPageSize(state),
-    totalItemCount: getTotalUsersCount(state),
-    currentPage: getCurrentPage(state),
-    isFetching: getIsFetching(state),
-    following: getFollowing(state)
-  }
-}
-
-
-export default compose(connect(mapStateToProps,
-  {
-    follow,
-    unfollow,
-    getUsers
-    // @ts-ignore
-  }))(UsersContainer)
+export default UsersPage

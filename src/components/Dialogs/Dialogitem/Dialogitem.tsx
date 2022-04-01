@@ -1,7 +1,13 @@
+// @ts-ignore
 import s from './../Dialogs.module.css'
-import {NavLink} from "react-router-dom"
+import {NavLink} from 'react-router-dom'
+import {FC} from 'react'
 
-const DialogItem = (props) => {
+type PropsType = {
+    name: string
+}
+
+const DialogItem: FC<PropsType> = (props) => {
 
     let path = '/dialog/' + props.name
 
