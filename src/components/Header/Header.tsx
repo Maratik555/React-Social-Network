@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom'
 import React, {FC} from 'react'
-import {Avatar, Button, Col, Layout, Menu, Rate, Row} from 'antd'
+import {Avatar, Button, Col, Layout, Menu, Rate, Row, Switch} from 'antd'
 import {GithubOutlined, UserOutlined} from '@ant-design/icons'
 import {useDispatch} from 'react-redux'
 import {TypedUseSelector} from '../../redux/redux-store'
@@ -12,8 +12,6 @@ export const Header: FC = () => {
     const dispatch = useDispatch()
 
     const logOut = () => dispatch(logout())
-
-
     const {Header} = Layout
 
     return (
@@ -22,9 +20,10 @@ export const Header: FC = () => {
             {/*<img src={logo} alt='fb' />*/}
             <Row>
                 <Col span={16}>
-                    <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+                    <Menu theme="dark" mode="horizontal">
                         <Menu.Item icon={<UserOutlined/>} key="1"><Link to="/profile">Моя страница</Link></Menu.Item>
                         <Menu.Item icon={<GithubOutlined/>} key="2"><Link to="/devs">Разработчики</Link></Menu.Item>
+                        <Menu.Item key="3"><Switch checkedChildren="1" unCheckedChildren="0" defaultChecked /></Menu.Item>
                     </Menu>
                 </Col>
                 {isAuth ? <> <Col span={1}>

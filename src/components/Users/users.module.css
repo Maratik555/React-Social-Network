@@ -1,28 +1,28 @@
-.userPhoto{
-    width:150px;
-    height:150px;
-    margin-left:20px;
+.userPhoto {
+    width: 150px;
+    height: 150px;
+    margin-left: 20px;
 }
 
-.pageNumber{
-    margin: 4px;
-    border: 2px solid white;
+/*.pageNumber {*/
+/*    margin: 4px;*/
+/*    border: 2px solid white;*/
+/*}*/
+
+.btn {
+    margin-left: 50px;
 }
 
-.btn{
-    margin-left:50px;
-}
 
+/*.selectedPage {*/
+/*    font-weight: bold;*/
+/*    font-size: 35px;*/
 
-.selectedPage{
-    font-weight: bold;
-    font-size:35px;
+/*}*/
 
-}
-
-textarea{
-    margin-top: 15px;
-}
+/*textarea {*/
+/*    margin-top: 15px;*/
+/*}*/
 
 /*button{*/
 /*    border: 2px solid black;*/
@@ -47,13 +47,13 @@ textarea{
 /*    box-shadow: 2px 2px 2px 2px black;*/
 /*}*/
 
-.nameSt{
-    margin-left:55px;
+.nameSt {
+    margin-left: 55px;
 
     padding-top: 15px;
 }
 
-span{
+span {
     cursor: pointer;
 
 }

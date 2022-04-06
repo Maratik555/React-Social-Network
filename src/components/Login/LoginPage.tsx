@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 import {Field, InjectedFormProps, reduxForm} from 'redux-form'
 import {Element} from '../common/FormsControls/FormControls'
-import {maxCreatorLength, required} from '../../utils/validators/validators'
+import {maxCreatorLength, required} from '../../utils/validators'
 import {useDispatch, useSelector} from 'react-redux'
 import {login} from '../../redux/auth-reducer'
 import {Redirect} from 'react-router-dom'

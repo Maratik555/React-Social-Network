@@ -147,10 +147,11 @@ const UsersSearch: FC<PropsTypeUserSearch> = React.memo((props) => {
                                 disabled={!dirty || isSubmitting}>
                                 Reset
                             </Button>
-                            <button type="submit" disabled={isSubmitting}>
+                            <button style={{cursor:'pointer'}} type="submit" disabled={isSubmitting}>
                                 Send
                             </button>
-                            <Field style={{marginLeft: 15, marginBottom: 25}} name="friend" as="select">
+                            <Field style={{marginLeft: 15, marginBottom: 25, cursor:'pointer'}}
+                                   name="friend" as="select">
                                 <option value="null">All</option>
                                 <option value="true">Only followed</option>
                                 <option value="false">Only unfollowed</option>

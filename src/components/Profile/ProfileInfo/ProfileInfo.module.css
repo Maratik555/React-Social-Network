@@ -2,9 +2,9 @@
 width: 100%;
 }
 
-.desBloc {
-    padding:10px;
-}
+/*.desBloc {*/
+/*    padding:10px;*/
+/*}*/
 
 .btn {
     margin: 20px;
@@ -14,10 +14,6 @@ width: 100%;
     padding-left: 15px;
 }
 
-.status {
-    padding-bottom:15px;
-    color : #d24949;
-}
 .mainPhoto {
     max-width:200px;
     border-radius: 100%;

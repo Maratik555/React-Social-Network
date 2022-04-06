@@ -1,5 +1,4 @@
 import axios from 'axios'
-// import { FilterType } from "../redux/users-reducer"
 
 const instance = axios.create({
     withCredentials: true,
@@ -60,7 +59,7 @@ export interface ProfileType {
     fullName: string
     contacts: any
     photos: Photos
-    AboutMe: string
+    aboutMe: string
 }
 
 export const usersAPI = {

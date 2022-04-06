@@ -4,7 +4,7 @@ import DialogItem from './Dialogitem/Dialogitem'
 import Message from './Message/Message'
 import {Field, reduxForm} from 'redux-form'
 import React, {FC} from 'react'
-import {maxCreatorLength, required} from '../../utils/validators/validators'
+import {maxCreatorLength, required} from '../../utils/validators'
 import {Element} from '../common/FormsControls/FormControls'
 import {InitialStateType} from '../../redux/dialogs-reducer'
 import {Button} from 'antd'
@@ -49,7 +49,7 @@ function AddMessage(props:any) {
           <Field placeholder={"Enter your message"} name={'newMessageBody'} component={Textarea}
                  validate={[required, maxLength50]}/>
           <div className={s.btn}><Button
-          > Send </Button>
+          > Отправить </Button>
           </div>
         </div>
       </form>

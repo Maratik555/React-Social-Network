@@ -9,7 +9,7 @@ import {ComponentType} from 'react'
 let mapStateToProps = (state: AppStateType) => {
       return {
         dialogsPage: state.dialogsPage,
-        friendsR: state.friendsR
+        // friendsR: state.friendsR
       }
 }
 

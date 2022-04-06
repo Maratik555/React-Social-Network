@@ -7,7 +7,7 @@ import userPhoto from '../../../assets/images/user.png'
 import React, {ChangeEvent, FC, useState} from 'react'
 import ProfileDataForm from './ProfileDataForm'
 import {ProfileType} from '../../../API/api'
-import {BackTop, Button} from 'antd'
+import {BackTop, Button, Image, Input} from 'antd'
 
 export interface PropsType {
   profile: ProfileType
@@ -36,11 +36,12 @@ const ProfileInfo:FC<PropsType> = (props) => {
 
     return (
     <div>
-      <div className={s.proImg}>
+      <div>
+          <Image
+            src={props.profile.photos.large || userPhoto } className={s.mainPhoto} alt="profile"/>
       </div>
-      <div className={s.desBloc}>
-          <img src={props.profile.photos.large || userPhoto } className={s.mainPhoto} alt="profile"/>
-        { props.isOwner && <input type={"file"} onChange={MainPhotoSelected} className={s.Ph} />}
+        { props.isOwner && <Input type={"file"} onChange={MainPhotoSelected} className={s.Ph} />}
+      <div>
         <ProfileHooks status={props.status} updateStatus={props.updateStatus}/>
         {/*@ts-ignore*/}
         {editMode ? <ProfileDataForm initialValues={props.profile} profile={props.profile} onSubmit={onSubmit} />
@@ -48,7 +49,7 @@ const ProfileInfo:FC<PropsType> = (props) => {
                        profile={props.profile}
                        isOwner={props.isOwner}
           />}
-      </div>
+    </div>
     </div>
   )
 }
@@ -85,7 +86,7 @@ const ProfileData:FC<ProfileData> = (props) => {
       </div>
     }
     <div>
-      <b>Обо мне</b> : {props.profile.AboutMe}
+      <b>Обо мне</b> : {props.profile.aboutMe}
     </div>
     <div>
       <b>Контакты</b> : {Object.keys(props.profile.contacts).map(key => {
